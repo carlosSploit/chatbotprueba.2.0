@@ -23,4 +23,5 @@ def messegchatbot(emi):
     return "Tedaria una respuesnta pero aun no estoy conectado a la data"
 
 
-app.run(debug=False)
+if __name__ == '__main__':
+    app.run()
