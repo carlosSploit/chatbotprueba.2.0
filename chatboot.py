@@ -88,6 +88,7 @@ def conversacionbot(messeg):
         print('Tenemos algunos de estos inmuebles')
 
     else:
+
         resul['messeg'] = meseg
         print(meseg)
     # return json.dumps(resul)
