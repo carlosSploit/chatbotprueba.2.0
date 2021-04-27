@@ -116,9 +116,12 @@ def inmuebleCOMPRA():
             departR.append(redireccion)
 
     # __________________Dinero________________
+    cont = 0
     for i in eD:
-        if((i.text != 'Analizar') and (i.text != '') and (i.text != 'TITLE') and (i.text != 'Inmuebles')):
-            departD.append(i.text)
+        if((i.text != 'Analizar') and (i.text != '') and (i.text != 'TITLE') and (i.text != 'Inmuebles') and not('de' in i.text)):
+            if (cont % 2 == 0):
+                departD.append(i.text)
+            cont = cont + 1
 
     # __________________Ciudad________________
     for i in eC:
@@ -134,12 +137,7 @@ def inmuebleCOMPRA():
         # guardado en json
         x['Comprar'][i] = {'depart': depart[i], 'costo': departD[i],
                            'result': departC[i], 'url': departR[i]}
-        # imprecion de datos
-        print('depart: ', depart[i])
-        print('costo: ', departD[i])
-        print('result: ', departC[i])
-        print('url: ', departR[i])
-        print('----------------------------------------------------------')
+    return json.dumps(x)
 
 # metodo para poder extraer los datos de los inmuebles para alquilar
 # con el url https://casas360.pe/alquiler/inmueble/
