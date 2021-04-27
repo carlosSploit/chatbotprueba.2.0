@@ -172,9 +172,12 @@ def inmuebleALQUILER():
             departR.append(redireccion)
 
     # __________________Dinero________________
+    cont = 0
     for i in eD:
-        if((i.text != 'Analizar') and (i.text != '') and (i.text != 'TITLE') and (i.text != 'Inmuebles')):
-            departD.append(i.text)
+        if((i.text != 'Analizar') and (i.text != '') and (i.text != 'TITLE') and (i.text != 'Inmuebles') and not('de' in i.text)):
+            if (cont % 2 == 0):
+                departD.append(i.text)
+            cont = cont + 1
 
     # __________________Ciudad________________
     for i in eC:
