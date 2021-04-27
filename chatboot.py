@@ -21,18 +21,6 @@ def initdatares():
     }
 
     pares = [
-        # [
-        #    r"(.*) caido (.*) hosting (.*)|(.*) cayo (.*) hosting (.*)",
-        #    ["Sentimos ese fallo, para reiniciarlo, entra en CPANEL y selecciona reiniciar", ]
-        # ],
-        # [
-        #    r"(.*) cuando (.*) pagar (.*) factura (.*)",
-        #    ["Hay que pagarla el dia 15 de cada mes por tarjeta de crédito", ]
-        # ],
-        # [
-        #    r"(.*) ampliar el servicio",
-        #    ["Para ampliar el servicio, contacta con facturacion", ]
-        # ],
         [
             r"(.*) mas comprados (.*)|(.*) mas (.*) comprados (.*)|(.*) favoritos (.*)",
             ["Los mas favoritos inmuebles son los siguientes", ]
