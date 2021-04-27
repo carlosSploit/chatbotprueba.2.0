@@ -21,20 +21,20 @@ def initdatares():
     }
 
     pares = [
+        # [
+        #    r"(.*) mas comprados (.*)|(.*) mas (.*) comprados (.*)|(.*) favoritos (.*)",
+        #    ["Los mas favoritos inmuebles son los siguientes", ]
+        # ],
+        # [
+        #    r"(.*) recomiendas (.*)|(.*) recomendarme (.*)",qui
+        #    ["Tenemos algunos de estos inmuebles para recomendarte", ]
+        # ],
+        # [
+        #    r"(.*) comprar (.*)|(.*) aquirir (.*)",
+        #    ["Tenemos algunos de estos inmuebles de compra", ]
+        # ],
         [
-            r"(.*) mas comprados (.*)|(.*) mas (.*) comprados (.*)|(.*) favoritos (.*)",
-            ["Los mas favoritos inmuebles son los siguientes", ]
-        ],
-        [
-            r"(.*) recomiendas (.*)|(.*) recomendarme (.*)",
-            ["Tenemos algunos de estos inmuebles para recomendarte", ]
-        ],
-        [
-            r"(.*) comprar (.*)|(.*) aquirir (.*)",
-            ["Tenemos algunos de estos inmuebles de compra", ]
-        ],
-        [
-            r"(.*) alquiler (.*)|(.*) alquilar (.*)|(.*) alquileres (.*)",
+            r"(.*)alquiler(.*)|(.*)alquilar(.*)|(.*)alquileres(.*)",
             ["Tenemos algunos de estos inmuebles de alquiler", ]
         ],
         [
@@ -47,11 +47,11 @@ def initdatares():
         ],
         [
             r"(.*)redes sociales(.*)|(.*)redes(.*)",
-            ["faceboo: https://fb.me/Casas360.org"]
+            ["faceboo: https://fb.me/Casas360.org", ]
         ],
         [
             r"(.*)estas(.*)|(.*)sientes(.*)|(.*)que tal(.*)",
-            ["No lo se soy un bot, y no entiendo los sentimientos"]
+            ["No lo se soy un bot, y no entiendo los sentimientos", ]
         ],
         [
             r"(.*)quien(.*)creado(.*)|(.*)quien(.*)creo(.*)",
@@ -59,7 +59,7 @@ def initdatares():
         ],
         [
             r"finalizar|adios",
-            ["Chao", "Fue bueno hablar contigo"]
+            ["Chao", "Fue bueno hablar contigo", ]
         ],
     ]
 
@@ -76,34 +76,45 @@ def conversacionbot(messeg):
     rejson = ''  # captara el mensaje en forma de string o cadena
 
     if ((meseg == 'None') or (meseg == '') or (meseg == None)):
-
+        # ************************************************************
         resul['messeg'] = 'Lo siento no entiendo, quisas sea porque no fui programada para tener conversaciones, solo ayudar.'
-
+        print('Lo siento no entiendo, quisas sea porque no fui programada para tener conversaciones, solo ayudar.')
+        # ************************************************************
     elif (meseg == 'Tenemos algunos de estos inmuebles de alquiler'):
-
+        # ************************************************************
         rejson = wb.inmuebleALQUILER()
         resul = json.loads(rejson)
         resul['messeg'] = 'Tenemos algunos de estos inmuebles'
-
+        print('Tenemos algunos de estos inmuebles de alquiler')
+        # ************************************************************
     elif (meseg == 'Tenemos algunos de estos inmuebles de compra'):
-
+        # ************************************************************
         rejson = wb.inmuebleCOMPRA()
         resul = json.loads(rejson)
         resul['messeg'] = 'Tenemos algunos de estos inmuebles'
-
+        print('Tenemos algunos de estos inmuebles de compra')
+        # ************************************************************
     elif (meseg == 'Tenemos algunos de estos inmuebles para recomendarte'):
-
+        # ************************************************************
         rejson = wb.inmuebleREC_FAV("R")
         resul = json.loads(rejson)
         resul['messeg'] = 'Te recomendamos estos inmuebles'
-
+        print('Tenemos algunos de estos inmuebles para recomendarte')
+        # ************************************************************
     elif (meseg == 'Los mas favoritos inmuebles son los siguientes'):
-
+        # ************************************************************
         rejson = wb.inmuebleREC_FAV("F")
         resul = json.loads(rejson)
         resul['messeg'] = 'Los mas comprados son los siguientes'
-
+        print('Los mas favoritos inmuebles son los siguientes')
+        # ************************************************************
     else:
+        # ************************************************************
         resul['messeg'] = meseg
+        print(meseg)
+#   return json.dumps(resul)
 
-    return json.dumps(resul)
+
+while (True):
+    res = input("yo: ")
+    conversacionbot(res)
