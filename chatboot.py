@@ -34,6 +34,18 @@ def initdatares():
         #    ["Para ampliar el servicio, contacta con facturacion", ]
         # ],
         [
+            r"(.*) mas comprados (.*)|(.*) mas (.*) comprados (.*)|(.*) favoritos (.*)",
+            ["Los mas favoritos inmuebles son los siguientes", ]
+        ],
+        [
+            r"(.*) recomiendas (.*)|(.*) recomendarme (.*)",
+            ["Tenemos algunos de estos inmuebles para recomendarte", ]
+        ],
+        [
+            r"(.*) comprar (.*)|(.*) aquirir (.*)",
+            ["Tenemos algunos de estos inmuebles de compra", ]
+        ],
+        [
             r"(.*) alquiler (.*)|(.*) alquilar (.*)|(.*) alquileres (.*)",
             ["Tenemos algunos de estos inmuebles de alquiler", ]
         ],
@@ -84,6 +96,24 @@ def conversacionbot(messeg):
         rejson = wb.inmuebleALQUILER()
         resul = json.loads(rejson)
         resul['messeg'] = 'Tenemos algunos de estos inmuebles'
+
+    elif (meseg == 'Tenemos algunos de estos inmuebles de compra'):
+
+        rejson = wb.inmuebleCOMPRA()
+        resul = json.loads(rejson)
+        resul['messeg'] = 'Tenemos algunos de estos inmuebles'
+
+    elif (meseg == 'Tenemos algunos de estos inmuebles para recomendarte'):
+
+        rejson = wb.inmuebleREC_FAV("R")
+        resul = json.loads(rejson)
+        resul['messeg'] = 'Te recomendamos estos inmuebles'
+
+    elif (meseg == 'Los mas favoritos inmuebles son los siguientes'):
+
+        rejson = wb.inmuebleREC_FAV("F")
+        resul = json.loads(rejson)
+        resul['messeg'] = 'Los mas comprados son los siguientes'
 
     else:
         resul['messeg'] = meseg

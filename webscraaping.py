@@ -68,23 +68,25 @@ def inmuebleREC_FAV(tipdar):
     favoritC = departamentosC[0:7]
     favoritC.reverse()
 
+    x = {}
+
     # ______________________IMPRECION___________________
     if (tipdar == 'R'):
+        x = {'Recomend': {}}
         print('**********************RECOMENDADO***************************')
         for i in range(7):
-            print('title: ', mejor[i])
-            print('costo: ', mejorD[i])
-            print('ciudad: ', mejorC[i])
-            print('url: ', mejorR[i])
+            x['Recomend'][i] = {'depart': mejor[i], 'costo': mejorD[i],
+                                'result': mejorC[i], 'url': mejorR[i]}
             print('----------------------------------------------------------')
     elif (tipdar == 'F'):
+        x = {'Favorit': {}}
         print('************************FAVORITOS****************************')
         for i in range(7):
-            print('title: ', favorit[i])
-            print('costo: ', favoritD[i])
-            print('ciudad: ', favoritC[i])
-            print('url: ', favoritR[i])
+            x['Favorit'][i] = {'depart': favorit[i], 'costo': favoritD[i],
+                               'result': favoritC[i], 'url': favoritR[i]}
             print('----------------------------------------------------------')
+
+    return json.dumps(x)
 
 # metodo para poder extraer los datos de los inmuebles para comprar
 # con el url https://casas360.pe/alquiler/inmueble?o=mas-baratos
