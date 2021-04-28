@@ -107,7 +107,7 @@ def conversacionbot(messeg):
 
     elif (meseg == 'Te recomiendo estos inmuebles'):
 
-        rejson = wb.inmuebleCOMPRA()
+        rejson = wb.inmuebleREC_FAV("R")
         resul = json.loads(rejson)
         resul['messeg'] = 'Te recomiendo estos inmuebles'
 
