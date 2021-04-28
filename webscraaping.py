@@ -76,14 +76,14 @@ def inmuebleREC_FAV(tipdar):
         print('**********************RECOMENDADO***************************')
         for i in range(7):
             x['Recomend'][i] = {'depart': mejor[i], 'costo': mejorD[i],
-                                'result': mejorC[i], 'url': mejorR[i]}
+                                'result': mejorC[i], 'url': mejorR[i], 'urlg': url}
             print('----------------------------------------------------------')
     elif (tipdar == 'F'):
         x = {'Favorit': {}}
         print('************************FAVORITOS****************************')
         for i in range(7):
             x['Favorit'][i] = {'depart': favorit[i], 'costo': favoritD[i],
-                               'result': favoritC[i], 'url': favoritR[i]}
+                               'result': favoritC[i], 'url': favoritR[i], 'urlg': url}
             print('----------------------------------------------------------')
 
     return json.dumps(x)
