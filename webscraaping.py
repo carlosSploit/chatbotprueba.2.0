@@ -138,7 +138,7 @@ def inmuebleCOMPRA():
     for i in range(10 if (len(depart) >= 10) else len(depart)):
         # guardado en json
         x['Comprar'][i] = {'depart': depart[i], 'costo': departD[i],
-                           'result': departC[i], 'url': departR[i]}
+                           'result': departC[i], 'url': departR[i], 'urlg': url}
     return json.dumps(x)
 
 # metodo para poder extraer los datos de los inmuebles para alquilar
