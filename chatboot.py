@@ -34,6 +34,10 @@ def initdatares():
         #    ["Para ampliar el servicio, contacta con facturacion", ]
         # ],
         [
+            r"(.*) comprar (.*)|(.*) comprando (.*)",
+            ["Tenemos algunos de estos inmuebles de compra", ]
+        ],
+        [
             r"(.*) alquiler (.*)|(.*) alquilar (.*)|(.*) alquileres (.*)",
             ["Tenemos algunos de estos inmuebles de alquiler", ]
         ],
@@ -78,22 +82,26 @@ def conversacionbot(messeg):
     if ((meseg == 'None') or (meseg == '') or (meseg == None)):
 
         resul['messeg'] = 'Lo siento no entiendo, quisas sea porque no fui programada para tener conversaciones, solo ayudar.'
-        print('Lo siento no entiendo, quisas sea porque no fui programada para tener conversaciones, solo ayudar.')
 
     elif (meseg == 'Tenemos algunos de estos inmuebles de alquiler'):
 
         rejson = wb.inmuebleALQUILER()
         resul = json.loads(rejson)
         resul['messeg'] = 'Tenemos algunos de estos inmuebles'
-        print('Tenemos algunos de estos inmuebles')
+
+    elif (meseg == 'Tenemos algunos de estos inmuebles de compra'):
+
+        rejson = wb.inmuebleCOMPRA()
+        resul = json.loads(rejson)
+        resul['messeg'] = 'Tenemos algunos de estos inmuebles'
+
+    elif (meseg == 'Tenemos algunos de estos inmuebles de compra'):
+
+        rejson = wb.inmuebleCOMPRA()
+        resul = json.loads(rejson)
+        resul['messeg'] = 'Tenemos algunos de estos inmuebles'
 
     else:
-
         resul['messeg'] = meseg
-        print(meseg)
-    # return json.dumps(resul)
 
-
-while (True):
-    cont = input("yo: ")
-    conversacionbot(cont)
+    return json.dumps(resul)

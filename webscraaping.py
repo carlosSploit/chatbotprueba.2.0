@@ -191,7 +191,7 @@ def inmuebleALQUILER():
     for i in range(10 if (len(depart) >= 10) else len(depart)):
         # guardar en json
         x['alquiler'][i] = {'depart': depart[i], 'costo': departD[i],
-                            'result': departC[i], 'url': departR[i]}
+                            'result': departC[i], 'url': departR[i], 'urlg': url}
 
     return json.dumps(x)
 
