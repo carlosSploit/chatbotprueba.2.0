@@ -34,6 +34,10 @@ def initdatares():
         #    ["Para ampliar el servicio, contacta con facturacion", ]
         # ],
         [
+            r"(.*) mas recomendado (.*)|(.*) recomiendas (.*)",
+            ["Te recomiendo estos inmuebles", ]
+        ],
+        [
             r"(.*) comprar (.*)|(.*) comprando (.*)",
             ["Tenemos algunos de estos inmuebles de compra", ]
         ],
@@ -100,6 +104,12 @@ def conversacionbot(messeg):
         rejson = wb.inmuebleCOMPRA()
         resul = json.loads(rejson)
         resul['messeg'] = 'Tenemos algunos de estos inmuebles'
+
+    elif (meseg == 'Te recomiendo estos inmuebles'):
+
+        rejson = wb.inmuebleCOMPRA()
+        resul = json.loads(rejson)
+        resul['messeg'] = 'Te recomiendo estos inmuebles'
 
     else:
         resul['messeg'] = meseg
