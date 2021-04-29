@@ -93,21 +93,19 @@ def conversacionbot(messeg):
 
     elif (meseg == 'Tenemos algunos de estos inmuebles de alquiler'):
 
-        rejson = wb.inmuebleALQUILER()
+        rejson = wb.inmuebleALQUILER(messeg)
         resul = json.loads(rejson)
-        resul['messeg'] = 'Tenemos algunos de estos inmuebles'
+
+        if (resul['messeg'] == 'none'):
+            resul['messeg'] = 'Tenemos algunos de estos inmuebles'
 
     elif (meseg == 'Tenemos algunos de estos inmuebles de compra'):
 
-        rejson = wb.inmuebleCOMPRA()
+        rejson = wb.inmuebleCOMPRA(messeg)
         resul = json.loads(rejson)
-        resul['messeg'] = 'Tenemos algunos de estos inmuebles'
 
-    elif (meseg == 'Tenemos algunos de estos inmuebles de compra'):
-
-        rejson = wb.inmuebleCOMPRA()
-        resul = json.loads(rejson)
-        resul['messeg'] = 'Tenemos algunos de estos inmuebles'
+        if (resul['messeg'] == 'none'):
+            resul['messeg'] = 'Tenemos algunos de estos inmuebles'
 
     elif (meseg == 'Te recomiendo estos inmuebles'):
 
