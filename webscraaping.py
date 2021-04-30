@@ -151,7 +151,7 @@ def inmuebleREC_FAV(tipdar):
 def inmuebleCOMPRA(messeg):
     # escaneo de la pagina web
     url = 'https://casas360.pe/compra/' + \
-        inte.resulParatDat(messeg)+'?o=mas-baratos'
+        inte.resulParatDat(messeg)
     page = requests.get(url)
     soup = BeautifulSoup(page.content, 'html.parser')
 
@@ -210,7 +210,7 @@ def inmuebleCOMPRA(messeg):
 def inmuebleALQUILER(messeg):
     # escaneo de la pagina web
     url = 'https://casas360.pe/alquiler/' + \
-        inte.resulParatDat(messeg)+'?o=mas-baratos'
+        inte.resulParatDat(messeg)
     page = requests.get(url)
     soup = BeautifulSoup(page.content, 'html.parser')
 
