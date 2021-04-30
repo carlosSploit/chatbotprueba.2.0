@@ -56,7 +56,8 @@ def inmuebleImfoExtrac(StriUrl, urlgene):
     # __________________Images_________________
     contI = 0
     for i in eI:
-        Img[contI] = i.find_all('img')[0]['data-original']
+        if (contI <= 5):
+            Img[contI] = i.find_all('img')[0]['data-original']
         contI = contI + 1
 
     x = {}
