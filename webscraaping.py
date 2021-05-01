@@ -6,6 +6,7 @@ import pandas as pd
 import interpre as inte
 import json
 
+UrlPrincipal = 'https://gojom.pe/'
 # ****************************Web Scraping******************************
 
 # metodo para poder extraer los datos de los inmuebles recomendados y favoritos
@@ -69,7 +70,8 @@ def inmuebleImfoExtrac(StriUrl, urlgene):
 
 def inmuebleREC_FAV(tipdar):
     # escaneo de la pagina web
-    url = 'https://casas360.pe/'
+    global UrlPrincipal
+    url = UrlPrincipal
     page = requests.get(url)
     soup = BeautifulSoup(page.content, 'html.parser')
 
@@ -90,7 +92,7 @@ def inmuebleREC_FAV(tipdar):
     for i in eq:
         if((i.text != 'Analizar') and (i.text != '') and (i.text != 'TITLE')):
             departamentos.append(i.text)
-            redireccion = 'https://casas360.pe' + i['href']
+            redireccion = 'https://gojom.pe' + i['href']
             departamentosR.append(redireccion)
 
     # title
@@ -150,7 +152,8 @@ def inmuebleREC_FAV(tipdar):
 
 def inmuebleCOMPRA(messeg):
     # escaneo de la pagina web
-    url = 'https://casas360.pe/compra/' + \
+    global UrlPrincipal
+    url = UrlPrincipal + 'compra/' + \
         inte.resulParatDat(messeg)
     page = requests.get(url)
     soup = BeautifulSoup(page.content, 'html.parser')
@@ -171,7 +174,7 @@ def inmuebleCOMPRA(messeg):
     for i in e:
         if((i.text != 'Analizar') and (i.text != '') and (i.text != 'TITLE') and (i.text != 'Inmuebles')):
             depart.append(i.text)
-            redireccion = 'https://casas360.pe' + i['href']
+            redireccion = 'https://gojom.pe' + i['href']
             departR.append(redireccion)
 
     # __________________Dinero________________
@@ -209,7 +212,8 @@ def inmuebleCOMPRA(messeg):
 
 def inmuebleALQUILER(messeg):
     # escaneo de la pagina web
-    url = 'https://casas360.pe/alquiler/' + \
+    global UrlPrincipal
+    url = UrlPrincipal + 'alquiler/' + \
         inte.resulParatDat(messeg)
     page = requests.get(url)
     soup = BeautifulSoup(page.content, 'html.parser')
@@ -231,7 +235,7 @@ def inmuebleALQUILER(messeg):
     for i in e:
         if((i.text != 'Analizar') and (i.text != '') and (i.text != 'TITLE') and (i.text != 'Inmuebles')):
             depart.append(i.text)
-            redireccion = 'https://casas360.pe' + i['href']
+            redireccion = 'https://gojom.pe' + i['href']
             departR.append(redireccion)
 
     # __________________Dinero________________
