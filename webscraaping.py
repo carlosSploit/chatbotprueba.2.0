@@ -79,13 +79,13 @@ def inmuebleREC_FAV(tipdar):
 
     # extraccion de etiquetas de las paginas web
     eq = soup.find_all('a', target="_blank")
-    eqD = soup.find_all('span', class_="currency-local")
-    eqC = soup.find_all('div', class_="address col")
+    #eqD = soup.find_all('span', class_="currency-local")
+    #eqC = soup.find_all('div', class_="address col")
 
     departamentos = list()  # lista de los nombres del lugar (descripccion)
     departamentosR = list()  # lista de las redirecciones
-    departamentosD = list()  # lista de los costos
-    departamentosC = list()  # lista de las ciudades
+    # departamentosD = list()  # lista de los costos
+    # departamentosC = list()  # lista de las ciudades
 
     # _________________Titulo Y Redireccion___________________
     # solo acepta 8 datos de muestreo
@@ -108,23 +108,23 @@ def inmuebleREC_FAV(tipdar):
     favoritR.reverse()
 
     # __________________Dinero________________
-    for i in eqD:
-        if((i.text != 'Analizar') and (i.text != '') and (i.text != 'TITLE')):
-            departamentosD.append(i.text)
-
-    mejorD = departamentosD[0:7]
-    departamentosD.reverse()
-    favoritD = departamentosD[0:7]
-    favoritD.reverse()
+    # for i in eqD:
+    #    if((i.text != 'Analizar') and (i.text != '') and (i.text != 'TITLE')):
+    #        departamentosD.append(i.text)
+    #
+    #mejorD = departamentosD[0:7]
+    # departamentosD.reverse()
+    #favoritD = departamentosD[0:7]
+    # favoritD.reverse()
     # __________________Ciudad________________
-    for i in eqC:
-        if((i.text != 'Analizar') and (i.text != '') and (i.text != 'TITLE')):
-            departamentosC.append(i.text)
+    # for i in eqC:
+    #    if((i.text != 'Analizar') and (i.text != '') and (i.text != 'TITLE')):
+    #        departamentosC.append(i.text)
 
-    mejorC = departamentosC[0:7]
-    departamentosC.reverse()
-    favoritC = departamentosC[0:7]
-    favoritC.reverse()
+    #mejorC = departamentosC[0:7]
+    # departamentosC.reverse()
+    #favoritC = departamentosC[0:7]
+    # favoritC.reverse()
 
     x = {}
 
@@ -133,15 +133,19 @@ def inmuebleREC_FAV(tipdar):
         x = {'Recomend': {}}
         print('**********************RECOMENDADO***************************')
         for i in range(7):
-            x['Recomend'][i] = {'depart': mejor[i], 'costo': mejorD[i],
-                                'result': mejorC[i], 'url': mejorR[i], 'urlg': url}
+            aux = inmuebleImfoExtrac(mejorR[i], url)
+            if (aux['img'] != {}):
+                x['Recomend'][i] = aux
+
             print('----------------------------------------------------------')
     elif (tipdar == 'F'):
         x = {'Favorit': {}}
         print('************************FAVORITOS****************************')
         for i in range(7):
-            x['Favorit'][i] = {'depart': favorit[i], 'costo': favoritD[i],
-                               'result': favoritC[i], 'url': favoritR[i], 'urlg': url}
+            aux = inmuebleImfoExtrac(favoritR[i], url)
+            if (aux['img'] != {}):
+                x['Favorit'][i] = aux
+
             print('----------------------------------------------------------')
 
     return json.dumps(x)
