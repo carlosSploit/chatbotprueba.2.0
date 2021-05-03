@@ -3,11 +3,11 @@ import smtplib
 messeg = "Contenedor de messeg"
 nombre = "contenedor de nombre"
 
-email = """From: %s 
-To: %s 
-MIME-Version: 1.0 
-Content-type: text/html 
-Subject: %s 
+email = """From: %s
+To: %s
+MIME-Version: 1.0
+Content-type: text/html
+Subject: %s
 
 %s
 """
@@ -22,8 +22,7 @@ def htmldataresult(mes, nom, numero, correo):
         correo + ' y mi numeor de telefono es : ' + numero
     nombre = nom
 
-    contentmesseg = """ 
-<!doctype html>
+    contentmesseg = """<!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml"
     xmlns:o="urn:schemas-microsoft-com:office:office">
 
@@ -76,7 +75,7 @@ def htmldataresult(mes, nom, numero, correo):
         <v:rect  style="mso-width-percent:1000;" xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false">
         <v:fill  origin="0.5, 0" position="0.5, 0" src="https://storage.googleapis.com/topolio25132/plugin-assets/6320/25132/Gijonresized-scaled%20edited_91b3f2c7-794f-4e57-bcb2-a862a06b94f0.png" color="#fc5c04" type="tile" />
         <v:textbox style="mso-fit-shape-to-text:true" inset="0,0,0,0">
-      
+
       <table
          align="center" border="0" cellpadding="0" cellspacing="0" class="" style="width:600px;" width="600"
       >
@@ -165,7 +164,7 @@ def htmldataresult(mes, nom, numero, correo):
                                         <td
                                             style="direction:ltr;font-size:0px;padding:9px 0px 9px 0px;text-align:center;vertical-align:top;">
                                             <!--[if mso | IE]>
-                  <table role="presentation" border="0" cellpadding="0" cellspacing="0">    
+                  <table role="presentation" border="0" cellpadding="0" cellspacing="0">
         <tr>
             <td
                class="" style="vertical-align:top;width:600px;"
@@ -346,7 +345,7 @@ def htmldataresult(mes, nom, numero, correo):
                                                                 </table>
                                                                 <!--[if mso | IE]>
               </td>
-            
+
               <td>
             <![endif]-->
                                                                 <table align="center" border="0" cellpadding="0"
@@ -407,7 +406,7 @@ def htmldataresult(mes, nom, numero, correo):
                                                                 </table>
                                                                 <!--[if mso | IE]>
               </td>
-            
+
           </tr>
         </table>
       <![endif]-->
@@ -456,7 +455,7 @@ def htmldataresult(mes, nom, numero, correo):
                                                 </div>
                                                 <!--[if mso | IE]>
               </td>
-              
+
           </tr>
           </table>
         <![endif]-->
@@ -464,7 +463,7 @@ def htmldataresult(mes, nom, numero, correo):
                                             <!--[if mso | IE]>
             </td>
         </tr>
-      
+
                   </table>
                 <![endif]-->
                                         </td>
@@ -513,4 +512,4 @@ def Mandandomesseg(messeg, nombre, numero, correo):
 
 # htmldataresult()
 # Mandandomesseg('quiero comerme un culo de locos',
-#                'carlos arturo guerrero castillo', '969280255', 'arturo14212000@gmail.com')
+#               'carlos arturo guerrero castillo', '969280255', 'arturo14212000@gmail.com')

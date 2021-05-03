@@ -32,6 +32,7 @@ def enviarmesseg():
     if (request.method == 'POST'):
         gm.Mandandomesseg(request.json['messeg'], request.json['nombre'],
                           request.json['numero'], request.json['correo'])
+
     return json.dumps({"mensaje": "la peticion fue enviada con exito"})
 
 
