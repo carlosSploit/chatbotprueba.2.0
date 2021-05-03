@@ -501,13 +501,14 @@ def Mandandomesseg(messeg, nombre, numero, correo):
     asunto = 'Consulta en mensaje'
     email = email % (remitente, destinatario, asunto, mensaje)
 
-    server = smtplib.SMTP('smtp.gmail.com', 587)
-    server.starttls()
+    server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
+    server.ehlo()
     server.login('arturo14212000@gmail.com', '@123456789987654321')
 
     server.sendmail(remitente,  # emisor
                     destinatario,  # reseptor
                     email)  # messeg
+    server.close()
 
 
 # htmldataresult()
