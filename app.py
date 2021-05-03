@@ -27,12 +27,12 @@ def messegchatbot(emi):
     return ctt.conversacionbot(emi)
 
 
-@app.route('/app/chatbot/correo', methods=["GET", "POST"])
+@app.route('/app/correo', methods=["POST"])
 def enviarmesseg():
     if (request.method == 'POST'):
-        gm.Mandandomesseg(request.form['messeg'], request.form['nombre'],
-                          request.form['numero'], request.form['correo'])
-    return {"mensaje": "la peticion fue enviada con exito"}
+        gm.Mandandomesseg(request.json['messeg'], request.json['nombre'],
+                          request.json['numero'], request.json['correo'])
+    return json.dumps({"mensaje": "la peticion fue enviada con exito"})
 
 
 if __name__ == '__main__':
