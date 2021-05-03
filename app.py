@@ -6,6 +6,7 @@ from flask import Flask
 from flask import request
 import chatboot as ctt
 import json
+import gmaiApi
 
 # *********************************Api***************************************
 
@@ -24,6 +25,16 @@ def messegchatbot(emi):
     # ctt.conversacionbot(emi)
     # conversacionBOT(emi)
     return ctt.conversacionbot(emi)
+
+
+@app.route('/app/chatbot/correo', methods=["GET", "POST"])
+def enviarmesseg():
+    if (request.method == 'POST'):
+
+        Mandarmensaje(request.form['messeg'], request.form['nombre'],
+                      request.form['numero'], request.form['correo'])
+
+    return 'realizado'
 
 
 if __name__ == '__main__':

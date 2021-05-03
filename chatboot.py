@@ -46,12 +46,16 @@ def initdatares():
             ["Tenemos algunos de estos inmuebles de compra", ]
         ],
         [
+            r"(.*) Cual (.*) libro favorito (.*)",
+            ["No puedo leer", ]
+        ],
+        [
             r"(.*) alquiler (.*)|(.*) alquilar (.*)|(.*) alquileres (.*)",
             ["Tenemos algunos de estos inmuebles de alquiler", ]
         ],
         [
             r"hola|hey|buenas",
-            ["Hola", "Que tal", ]
+            ["Hola. ¿Cuál es tu pregunta?", "Que tal", ]
         ],
         [
             r"(.*)publicar(.*)inmueble(.*)|(.*)publica(.*)inmueble(.*)",
@@ -63,7 +67,8 @@ def initdatares():
         ],
         [
             r"(.*)estas(.*)|(.*)sientes(.*)|(.*)que tal(.*)",
-            ["No lo se soy un bot, y no entiendo los sentimientos"]
+            ["No lo se soy un bot, y no entiendo los sentimientos",
+                "Estoy bien, ¿y tú?", "También estoy bien."]
         ],
         [
             r"(.*)quien(.*)creado(.*)|(.*)quien(.*)creo(.*)",
@@ -73,6 +78,11 @@ def initdatares():
             r"finalizar|adios",
             ["Chao", "Fue bueno hablar contigo"]
         ],
+        [
+            r"(.*)contactarme(.*)|(.*)comunicarme(.*)ustedes(.*)",
+            ["Central de ventas:   +51 984129585 \nHorario:   Lunes a Viernes de 09:00 am a 06:00 pm"]
+        ],
+
     ]
 
 # metodo para sacer un resultado del chatbot
