@@ -34,7 +34,7 @@ def initdatares():
         #    ["Para ampliar el servicio, contacta con facturacion", ]
         # ],
         [
-            r"(.*) problema(.*) | (.*) duda(.*) | (.*) consula(.*)",
+            r"(.*) problema (.*) | (.*) duda (.*) | (.*) consula (.*)",
             ["Rellena el siguiente formulario", ]
         ],
         [
