@@ -45,10 +45,8 @@ def prueba():
 
 @app.route('/app/correo', methods=["GET"])
 def enviarmesseg():
-    # mail.send(
     gm.Mandandomesseg(request.args.get('messeg'),
                       request.args.get('nombre'), request.args.get('numero'), request.args.get('correo'))
-    # )
     return json.dumps({"mensaje": "la peticion fue enviada con exito"})
 
 
