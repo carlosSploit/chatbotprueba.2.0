@@ -1,28 +1,24 @@
 import smtplib
 
-email = """From: %s
-To: %s
-MIME-Version: 1.0
-Content-type: text/html
-Subject: %s
-
-%s
-"""
-
 
 def htmldataresult(mes, nom, numero, correo):
     messeg = mes + 'te puedes contactar conmigo : ' + \
         correo + ' y mi numeor de telefono es : ' + numero
     nombre = nom
+    remitente = "server <arturo14212000@gmail.com>"
+    destinatario = "Empresa <arturo14212000@gmail.com>"
+    asunto = 'Consulta en mensaje'
+    contentmesseg = """From: """ + remitente + """
+To: """ + destinatario + """
+MIME-Version: 1.0
+Content-type: text/html
+Subject: """ + asunto + """
 
-    contentmesseg = """<!doctype html>
+
+<!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml"
     xmlns:o="urn:schemas-microsoft-com:office:office">
-
 <head>
-    <title>
-
-    </title>
     <!--[if !mso]><!-- -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!--<![endif]-->
@@ -484,15 +480,13 @@ def htmldataresult(mes, nom, numero, correo):
 
 def Mandandomesseg(messeg, nombre, numero, correo):
     mensaje = htmldataresult(messeg, nombre, numero, correo)
-    global email
     # edtmessegnfcod
     # edtnombrenfcod
 
     # remplazar con los datos
     remitente = "server <arturo14212000@gmail.com>"
     destinatario = "Empresa <arturo14212000@gmail.com>"
-    asunto = 'Consulta en mensaje'
-    email = email % (remitente, destinatario, asunto, mensaje)
+    email = mensaje
 
     server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
     server.ehlo()
