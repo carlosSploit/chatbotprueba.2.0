@@ -8,7 +8,6 @@ from flask_mail import Mail
 import chatboot as ctt
 import json
 import gmaiApi as gm
-from config import DevelopmentConfig
 # *********************************Api***************************************
 
 app = Flask(__name__)  # inicialisando la plataforma de flast
