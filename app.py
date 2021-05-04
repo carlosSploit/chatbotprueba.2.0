@@ -4,13 +4,23 @@
 # librerias para la creacion de la api
 from flask import Flask
 from flask import request
+from flask_mail import Mail
 import chatboot as ctt
 import json
 import gmaiApi as gm
-
+from config import DevelopmentConfig
 # *********************************Api***************************************
 
 app = Flask(__name__)  # inicialisando la plataforma de flast
+# app.config.from_object(DevelopmentConfig)
+#mail = Mail()
+#mail.port = 587
+#mail.username = 'arturo14212000@gmail.com'
+#mail.password = '@123456789987654321'
+#mail.use_ssl = False
+#mail.use_tls = True
+#mail.server = 'smtp.gmail.com'
+
 ctt.initdatares()
 
 server_name = app.config['SERVER_NAME']
@@ -35,12 +45,16 @@ def prueba():
 
 @app.route('/app/correo', methods=["GET"])
 def enviarmesseg():
+    # mail.send(
     gm.Mandandomesseg(request.args.get('messeg'),
                       request.args.get('nombre'), request.args.get('numero'), request.args.get('correo'))
+    # )
+
     return json.dumps({"mensaje": "la peticion fue enviada con exito"})
 
 
 if __name__ == '__main__':
+    # mail.init_app(app)
     if server_name and ':' in server_name:
         host, port = server_name.split(":")
         port = int(port)
