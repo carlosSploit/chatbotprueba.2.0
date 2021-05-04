@@ -4,7 +4,6 @@
 # librerias para la creacion de la api
 from flask import Flask
 from flask import request
-from flask_mail import Mail
 import chatboot as ctt
 import json
 import gmaiApi as gm
