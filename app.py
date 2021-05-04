@@ -10,9 +10,10 @@ import gmaiApi as gm
 
 # *********************************Api***************************************
 
-
 app = Flask(__name__)  # inicialisando la plataforma de flast
 ctt.initdatares()
+
+server_name = app.config['SERVER_NAME']
 
 
 @app.route('/', methods=["GET", "POST"])
@@ -40,4 +41,10 @@ def enviarmesseg():
 
 
 if __name__ == '__main__':
-    app.run()
+    if server_name and ':' in server_name:
+        host, port = server_name.split(":")
+        port = int(port)
+    else:
+        port = 5000
+        host = "localhost"
+    app.run(host=host, port=port)
