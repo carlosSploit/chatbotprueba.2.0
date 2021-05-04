@@ -27,12 +27,15 @@ def messegchatbot(emi):
     return ctt.conversacionbot(emi)
 
 
-@app.route('/app/correo', methods=["POST"])
-def enviarmesseg():
-    if (request.method == 'POST'):
-        gm.Mandandomesseg('quiero comerme un culo de locos',
-                          'carlos arturo guerrero castillo', '969280255', 'arturo14212000@gmail.com')
+@app.route('/app/', methods=["GET", "POST"])
+def prueba():
+    return json.dumps({"mensaje": request.args.get('mesg'), "meseje2": request.args.get('mesg2')})
 
+
+@app.route('/app/correo', methods=["GET"])
+def enviarmesseg():
+    gm.Mandandomesseg(request.args.get('messeg'),
+                      request.args.get('nombre'), request.args.get('numero'), request.args.get('correo'))
     return json.dumps({"mensaje": "la peticion fue enviada con exito"})
 
 

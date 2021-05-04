@@ -1,8 +1,5 @@
 import smtplib
 
-messeg = "Contenedor de messeg"
-nombre = "contenedor de nombre"
-
 email = """From: %s
 To: %s
 MIME-Version: 1.0
@@ -14,10 +11,6 @@ Subject: %s
 
 
 def htmldataresult(mes, nom, numero, correo):
-
-    global contentmesseg
-    global nombre
-    global messeg
     messeg = mes + 'te puedes contactar conmigo : ' + \
         correo + ' y mi numeor de telefono es : ' + numero
     nombre = nom
