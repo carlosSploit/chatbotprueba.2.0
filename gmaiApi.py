@@ -2,7 +2,7 @@ import smtplib
 
 
 def htmldataresult(mes, nom, numero, correo):
-    messeg = mes + 'te puedes contactar conmigo : ' + \
+    messeg = mes + '. Te puedes contactar conmigo : ' + \
         correo + ' y mi numeor de telefono es : ' + numero
     nombre = nom
     remitente = "server <arturo14212000@gmail.com>"
