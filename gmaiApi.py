@@ -490,7 +490,7 @@ def Mandandomesseg(messeg, nombre, numero, correo):
 
     server = smtplib.SMTP_SSL('smtp.gmail.com', 465)  # 465 - 587
     server.ehlo()
-    server.login('arturo14212000@gmail.com', '@123456789987654321')
+    server.login('arturo14212000@gmail.com', 'mbgjhbppikvamcmf')
 
     server.sendmail(remitente,  # emisor
                     destinatario,  # reseptor
