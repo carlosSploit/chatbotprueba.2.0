@@ -484,13 +484,13 @@ def Mandandomesseg(messeg, nombre, numero, correo):
     # edtnombrenfcod
 
     # remplazar con los datos
-    remitente = "server <caguerrerog@ucvvirtual.edu.pe>"
+    remitente = "server <arturo14212000@gmail.com>"
     destinatario = "Empresa <arturo14212000@gmail.com>"
     email = mensaje
 
     server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
     server.ehlo()
-    server.login('caguerrerog@ucvvirtual.edu.pe', '10111213')
+    server.login('arturo14212000@gmail.com', '@123456789987654321')
 
     server.sendmail(remitente,  # emisor
                     destinatario,  # reseptor
