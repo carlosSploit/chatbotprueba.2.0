@@ -23,7 +23,7 @@ app = Flask(__name__)  # inicialisando la plataforma de flast
 
 ctt.initdatares()
 
-server_name = app.config['SERVER_NAME']
+#server_name = app.config['SERVER_NAME']
 
 
 @app.route('/', methods=["GET", "POST"])
@@ -49,16 +49,16 @@ def enviarmesseg():
     gm.Mandandomesseg(request.args.get('messeg'),
                       request.args.get('nombre'), request.args.get('numero'), request.args.get('correo'))
     # )
-
     return json.dumps({"mensaje": "la peticion fue enviada con exito"})
 
 
 if __name__ == '__main__':
     # mail.init_app(app)
-    if server_name and ':' in server_name:
-        host, port = server_name.split(":")
-        port = int(port)
-    else:
-        port = 5000
-        host = "localhost"
-    app.run(host=host, port=port)
+    # if server_name and ':' in server_name:
+    #    host, port = server_name.split(":")
+    #    port = int(port)
+    # else:
+    #    port = 5000
+    #    host = "localhost"
+    #app.run(host=host, port=port)
+    app.run()
