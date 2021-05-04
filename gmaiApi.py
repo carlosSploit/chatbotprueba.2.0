@@ -484,7 +484,7 @@ def Mandandomesseg(messeg, nombre, numero, correo):
     # edtnombrenfcod
 
     # remplazar con los datos
-    remitente = "server <arturo14212000@gmail.com>"
+    remitente = "server <caguerrerog@ucvvirtual.edu.pe>"
     destinatario = "Empresa <arturo14212000@gmail.com>"
     email = mensaje
 
