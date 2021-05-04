@@ -30,8 +30,8 @@ def messegchatbot(emi):
 @app.route('/app/correo', methods=["POST"])
 def enviarmesseg():
     if (request.method == 'POST'):
-        gm.Mandandomesseg(request.json['messeg'], request.json['nombre'],
-                          request.json['numero'], request.json['correo'])
+        gm.Mandandomesseg('quiero comerme un culo de locos',
+                          'carlos arturo guerrero castillo', '969280255', 'arturo14212000@gmail.com')
 
     return json.dumps({"mensaje": "la peticion fue enviada con exito"})
 
