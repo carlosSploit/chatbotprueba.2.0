@@ -64,4 +64,4 @@ if __name__ == '__main__':
     #    port = 5000
     #    host = "localhost"
     #app.run(host=host, port=port)
-    app.run(debug=True)
+    app.run()
