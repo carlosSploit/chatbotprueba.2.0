@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type='text/javascript' src="https://www.botlibre.com/scripts/sdk.js"></script>
+    <script type='text/javascript'>
+        SDK.applicationId = "7651909115387389041";
+        var sdk = new SDKConnection();
+        var web = new WebAvatar();
+        web.version = 8.5;
+        web.connection = sdk;
+        web.avatar = "25337095";
+        web.voice = "";
+        web.voiceMod = "";
+        web.width = "250";
+        web.createBox();
+        web.addMessage("hola", "", "", "");
+        web.processMessages();
+    </script>
+</body>
+
+</html>

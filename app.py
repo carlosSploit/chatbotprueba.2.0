@@ -4,12 +4,14 @@
 # librerias para la creacion de la api
 from flask import Flask
 from flask import request
+from flask import render_template
 import chatboot as ctt
 import json
 import gmaiApi as gm
 # *********************************Api***************************************
 
-app = Flask(__name__)  # inicialisando la plataforma de flast
+# inicialisando la plataforma de flast
+app = Flask(__name__, template_folder='plantillas')
 # app.config.from_object(DevelopmentConfig)
 #mail = Mail()
 #mail.port = 587
@@ -48,6 +50,11 @@ def enviarmesseg():
     return json.dumps({"mensaje": "la peticion fue enviada con exito"})
 
 
+@app.route('/app/avatar', methods=["GET"])
+def renderavatar():
+    return render_template('botsape.html')
+
+
 if __name__ == '__main__':
     # mail.init_app(app)
     # if server_name and ':' in server_name:
@@ -57,4 +64,4 @@ if __name__ == '__main__':
     #    port = 5000
     #    host = "localhost"
     #app.run(host=host, port=port)
-    app.run()
+    app.run(debug=True)
