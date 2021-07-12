@@ -5,6 +5,5 @@ pandas==1.2.4
 beautifulsoup4==4.9.3
 requests==2.25.1
 gunicorn
-PyYAML==3.13
 ChatterBot==1.0.2
 chatterbot-corpus==1.2.0
