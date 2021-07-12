@@ -72,7 +72,7 @@ if __name__ == '__main__':
     #    port = int(port)
     # else:
     ca.init()
-    port = 5000
-    host = "192.168.0.7"
-    app.run(host=host, port=port)
+    #port = 5000
+    #host = "192.168.0.7"
+    #app.run(host=host, port=port)
     app.run()
