@@ -8,10 +8,12 @@ from flask import render_template
 import chatboot as ctt
 import json
 import gmaiApi as gm
+from chatbotaprend import chatbotApren
 # *********************************Api***************************************
 
 # inicialisando la plataforma de flast
 app = Flask(__name__, template_folder='plantillas')
+ca = chatbotApren()
 # app.config.from_object(DevelopmentConfig)
 #mail = Mail()
 #mail.port = 587
@@ -38,7 +40,8 @@ def messegchatbot(emi):
     resul = ''
     y = json.loads(ctt.conversacionbot(emi))
     if (y['messeg'] == 'none'):
-        y['messeg'] = 'Lo siento no entiendo, quisas sea porque no fui programada para tener conversaciones, solo ayudar.'
+        print(ca.converc(emi))
+        y['messeg'] = str(ca.converc(emi))
         resul = json.dumps(y)
     else:
         resul = json.dumps(y)
@@ -68,6 +71,7 @@ if __name__ == '__main__':
     #    host, port = server_name.split(":")
     #    port = int(port)
     # else:
+    ca.init()
     port = 5000
     host = "192.168.0.7"
     app.run(host=host, port=port)
