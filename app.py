@@ -35,7 +35,14 @@ def messeg():
 def messegchatbot(emi):
     # ctt.conversacionbot(emi)
     # conversacionBOT(emi)
-    return ctt.conversacionbot(emi)
+    resul = ''
+    y = json.loads(ctt.conversacionbot(emi))
+    if (y['messeg'] == 'none'):
+        y['messeg'] = 'Lo siento no entiendo, quisas sea porque no fui programada para tener conversaciones, solo ayudar.'
+        resul = json.dumps(y)
+    else:
+        resul = json.dumps(y)
+    return resul
 
 
 @app.route('/app/', methods=["GET", "POST"])
@@ -61,7 +68,7 @@ if __name__ == '__main__':
     #    host, port = server_name.split(":")
     #    port = int(port)
     # else:
-    #    port = 5000
-    #    host = "localhost"
-    #app.run(host=host, port=port)
+    port = 5000
+    host = "192.168.0.7"
+    app.run(host=host, port=port)
     app.run()

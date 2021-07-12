@@ -34,6 +34,18 @@ def initdatares():
         #    ["Para ampliar el servicio, contacta con facturacion", ]
         # ],
         [
+            r"(.*) metodos (.*) publicar (.*)",
+            ["Tenemos el metodo particular o profecional", ]
+        ],
+        [
+            r"(.*) publicar (.*) particular (.*) | (.*) particular (.*) publicar (.*)",
+            ["Propietarios que desean vender o alquilar un inmueble. Mas informacion aqui : https://gojom.pe/p/publica-tu-inmueble-particular", ]
+        ],
+        [
+            r"(.*) publicar (.*) profecional (.*) | (.*) profecional (.*) publicar (.*)",
+            ["Inmobiliarias, corredores, agentes. Mas informacion aqui : https://gojom.pe/p/publica-tu-inmueble-profesional", ]
+        ],
+        [
             r"(.*) problema (.*) | (.*) duda (.*) | (.*) consula (.*)",
             ["Rellena el siguiente formulario", ]
         ],
@@ -103,7 +115,7 @@ def conversacionbot(messeg):
 
     if ((meseg == 'None') or (meseg == '') or (meseg == None)):
 
-        resul['messeg'] = 'Lo siento no entiendo, quisas sea porque no fui programada para tener conversaciones, solo ayudar.'
+        resul['messeg'] = 'none'
 
     elif (meseg == 'Tenemos algunos de estos inmuebles de alquiler'):
 
