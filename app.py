@@ -9,7 +9,7 @@ import chatboot as ctt
 import json
 import gmaiApi as gm
 from chatbotaprend import chatbotApren
-import ssl
+#import ssl
 # *********************************Api***************************************
 
 # inicialisando la plataforma de flast
@@ -72,10 +72,10 @@ if __name__ == '__main__':
     #    host, port = server_name.split(":")
     #    port = int(port)
     # else:
-    context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
-    context.load_cert_chain('server.cer', 'server.key')
-    ca.init()
-    port = 443
-    host = "192.168.0.7"
-    app.run(host=host, port=port, ssl_context=context)
-    # app.run()
+    #context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
+    #context.load_cert_chain('server.cer', 'server.key')
+    # ca.init()
+    #port = 443
+    #host = "192.168.0.7"
+    #app.run(host=host, port=port, ssl_context=context)
+    app.run()
