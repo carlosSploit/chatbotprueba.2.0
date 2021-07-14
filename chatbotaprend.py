@@ -2,11 +2,14 @@
 # pip install chatterbot
 # pip install chatterbot_corpus
 # pip install git+git://github.com/huggingface/transformers@59b5953d89544a66d73
+# -*- coding:utf-8 -*-
 
 # api de chatbot
 from chatterbot import ChatBot
 from chatterbot.trainers import ChatterBotCorpusTrainer, ListTrainer
 import yaml
+#import sys
+#import unicodedata
 
 chat = None
 trainer = None
@@ -50,8 +53,17 @@ def trainer_M():
     train = []
     for key, value in yaml_content.items():
         if(key == "conversaciones"):
-            train = value
-    print(train)
+            auxvalue = []  # cadena de carapteres que ara de auxiliar
+            # mantenimiento de caracteres - tildes - Ñ etc
+            for val in value:
+                try:
+                    auxvalue.append(val.upper().encode(
+                        "cp1252").decode().title())
+                except UnicodeDecodeError:
+                    auxvalue.append(val)
+            # ----------------------------------------------
+            train = auxvalue
+
     trainer.train(train)
     trainer.export_for_training("./dataset.json")
 
@@ -60,3 +72,7 @@ def converc(peticion):
     global chat
     repuestas = chat.get_response(peticion)
     return repuestas
+
+
+# init()
+#print(converc("porque eres muy guapo"))

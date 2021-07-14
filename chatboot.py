@@ -82,6 +82,10 @@ def initdatares():
             ["faceboo: https://www.facebook.com/GoJom.pe"]
         ],
         [
+            r"(.*)pagina empresarial(.*)|(.*)pagina(.*)",
+            ["empresa: https://gojom.pe/"]
+        ],
+        [
             r"(.*)estas(.*)|(.*)sientes(.*)|(.*)que tal(.*)",
             ["No lo se soy un bot, y no entiendo los sentimientos",
                 "Estoy bien, ¿y tú?", "También estoy bien."]
@@ -148,6 +152,10 @@ def conversacionbot(messeg):
     elif (meseg.rfind('https://www.facebook.com/') > -1):
 
         resul = json.loads(wb.getposfacebookinterprice(meseg))
+
+    elif (meseg.rfind('https://gojom.pe/') > -1):
+
+        resul = json.loads(wb.getposwebinterprice(meseg))
 
     else:
         resul['messeg'] = meseg

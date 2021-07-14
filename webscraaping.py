@@ -285,6 +285,65 @@ def getposfacebookinterprice(url):
             post['text']+"\n"+"www.facebook.com"+"\n"+post['image']
         return json.dumps(x)
 
+
+def getposwebinterprice(StriUrl):
+    # escaneo de la pagina web
+    url = StriUrl.split(" ")[1]
+    page = requests.get(url)
+    soup = BeautifulSoup(page.content, 'html.parser')
+
+    # ____________recoleccion de datos del mejor y del no mejor_________________
+
+    # extraccion de etiquetas de las paginas web
+    # extraer el titulo del inmueble
+    title = soup.find('meta', property="og:title")
+    descripccion = soup.find('meta', property="og:description")
+    urlbase = soup.find('meta', property="og:url")
+    img = soup.find('meta', property="og:image")
+
+    x = {'messeg': 'none'}
+
+    # print(title["content"])
+    x['messeg'] = StriUrl+"\n"+title["content"]+"\n"+descripccion["content"] + \
+        "\n"+urlbase["content"]+"\n"+img["content"]
+
+    # name = ''  # para mantenerlo el titulo del inmueble
+    # city = ''  # para mantenerlo la ciudad donde se encuenta
+    # money = ''  # para mantenerlo el precio
+    # Espe = {}  # para mantenerlo en un array de espesificaciones
+    # Img = {}  # para mantenerlo en un array de Imagines
+
+    # # _________________Titulo Y Redirecconamiento___________________
+    # # solo acepta 8 datos de muestreo
+    # for i in e:
+    #     if((i.text != 'Analizar') and (i.text != '') and (i.text != 'TITLE') and (i.text != 'Inmuebles')):
+    #         name = i.text
+
+    # # __________________Ciudad________________
+    # for i in ec:
+    #     # if((i.text != 'Analizar') and (i.text != '') and (i.text != 'TITLE') and (i.text != 'Inmuebles') and not('de' in i.text)):
+    #     city = i.text
+    # # __________________Dinero________________
+    # money = eD[1].text
+    # # __________________Espesif_________________
+    # contE = 0  # para contar cada una de las espesificaciones
+    # for i in eE[0].find_all('div', class_="mr-3 my-1 d-inline-flex"):
+    #     con = i.text.split()
+    #     Espe[con[1]] = con[0]
+
+    # # __________________Images_________________
+    # contI = 0
+    # for i in eI:
+    #     if (contI <= 5):
+    #         Img[contI] = i.find_all('img')[0]['data-original']
+    #     contI = contI + 1
+
+    # x = {}
+    # x = {'depart': name, 'costo': money, 'result': city,
+    #      'url': url, "img": Img, "espe": Espe, 'urlg': urlgene}
+
+    return json.dumps(x)
+
 # probar metodos creados de web scraping
 # inmuebleREC_FAV('R')
 # inmuebleCOMPRA()
