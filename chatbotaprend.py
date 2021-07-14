@@ -4,7 +4,7 @@
 # pip install git+git://github.com/huggingface/transformers@59b5953d89544a66d73
 
 # api de chatbot
-from chatterbot import ChatBot
+from chatterbot.chatterbot import ChatBot
 from chatterbot.trainers import ChatterBotCorpusTrainer, ListTrainer
 import yaml
 
