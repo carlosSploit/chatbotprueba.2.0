@@ -8,13 +8,12 @@ from flask import render_template
 import chatboot as ctt
 import json
 import gmaiApi as gm
-from chatbotaprend import chatbotApren
+import chatbotaprend as ca
 #import ssl
 # *********************************Api***************************************
 
 # inicialisando la plataforma de flast
 app = Flask(__name__, template_folder='plantillas')
-ca = chatbotApren()
 # app.config.from_object(DevelopmentConfig)
 #mail = Mail()
 #mail.port = 587
@@ -23,7 +22,7 @@ ca = chatbotApren()
 #mail.use_ssl = False
 #mail.use_tls = True
 #mail.server = 'smtp.gmail.com'
-
+ca.init()
 ctt.initdatares()
 
 #server_name = app.config['SERVER_NAME']
@@ -73,7 +72,6 @@ if __name__ == '__main__':
     # else:
     #context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
     #context.load_cert_chain('server.cer', 'server.key')
-    ca.init()
     #port = 443
     #host = "192.168.0.7"
     #app.run(host=host, port=port, ssl_context=context)
