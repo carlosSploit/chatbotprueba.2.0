@@ -277,7 +277,7 @@ def getposfacebookinterprice(url):
     namepage = namepage.replace("https://www.facebook.com/", "")
     # escaneo de la pagina web
     x = {'messeg': 'none'}
-    for post in get_posts(namepage, pages=1, credentials=('985796307', '@12345679')):
+    for post in get_posts(namepage, pages=1, cookies='./cookies.json'):
         # print(post)
         print("*******************************************")
         x['messeg'] = url+"\n"+post['username']+"\n"+post['username']+", "+str(post['likes'])+" Me gustas. " + \
