@@ -79,7 +79,7 @@ def initdatares():
         ],
         [
             r"(.*)redes sociales(.*)|(.*)redes(.*)",
-            ["faceboo: https://fb.me/Casas360.org"]
+            ["faceboo: https://www.facebook.com/GoJom.pe"]
         ],
         [
             r"(.*)estas(.*)|(.*)sientes(.*)|(.*)que tal(.*)",
@@ -144,6 +144,10 @@ def conversacionbot(messeg):
         rejson = wb.inmuebleREC_FAV("F")
         resul = json.loads(rejson)
         resul['messeg'] = 'Los mas comprados son estos inmuebles'
+
+    elif (meseg.rfind('https://www.facebook.com/') > -1):
+
+        resul = json.loads(wb.getposfacebookinterprice(meseg))
 
     else:
         resul['messeg'] = meseg

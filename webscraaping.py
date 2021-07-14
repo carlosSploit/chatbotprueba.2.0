@@ -5,6 +5,7 @@ import requests
 import pandas as pd
 import interpre as inte
 import json
+from facebook_scraper import get_posts
 
 UrlPrincipal = 'https://gojom.pe/'
 # ****************************Web Scraping******************************
@@ -270,6 +271,19 @@ def inmuebleALQUILER(messeg):
 
     return json.dumps(x)
 
+
+def getposfacebookinterprice(url):
+    namepage = url.split(" ")[1]
+    namepage = namepage.replace("https://www.facebook.com/", "")
+    # escaneo de la pagina web
+    x = {'messeg': 'none'}
+    for post in get_posts(namepage, pages=1):
+        # print(post)
+        print("*******************************************")
+        x['messeg'] = url+"\n"+post['username']+"\n"+post['username']+", "+str(post['likes'])+" Me gustas. " + \
+            str(post['comments'])+" personas estasn hablando de esto. " + \
+            post['text']+"\n"+"www.facebook.com"+"\n"+post['image']
+        return json.dumps(x)
 
 # probar metodos creados de web scraping
 # inmuebleREC_FAV('R')
