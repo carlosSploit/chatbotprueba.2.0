@@ -22,7 +22,7 @@ def checkFileExistance(filePath):
         return False
 
 
-def init(self):
+def init():
     global chat
     global trainer
     chat = ChatBot(
