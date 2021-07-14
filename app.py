@@ -74,7 +74,7 @@ if __name__ == '__main__':
     # else:
     #context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
     #context.load_cert_chain('server.cer', 'server.key')
-    # ca.init()
+    ca.init()
     #port = 443
     #host = "192.168.0.7"
     #app.run(host=host, port=port, ssl_context=context)
