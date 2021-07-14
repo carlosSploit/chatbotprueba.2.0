@@ -41,7 +41,6 @@ def messegchatbot(emi):
     resul = ''
     y = json.loads(ctt.conversacionbot(emi))
     if (y['messeg'] == 'none'):
-        print(ca.converc(emi))
         y['messeg'] = str(ca.converc(emi))
         resul = json.dumps(y)
     else:
