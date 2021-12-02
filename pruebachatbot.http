@@ -1,0 +1,2 @@
+###
+GET https://192.168.0.7:443/app/chatbot/que imuebles me recomiendas hoy en dia HTTP/1.1
