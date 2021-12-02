@@ -1,4 +1,4 @@
-from ..controllers.messegecontroller import messegecontroller
+from controllers.messegecontroller import messegecontroller
 
 
 class messegemodels:

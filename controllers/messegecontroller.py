@@ -1,4 +1,4 @@
-from models import messegeiten
+from models.messegeiten import messegemodels
 
 # tipo stade palabras clabe
 # 1 -> secuencia  -> metodos - publicar
@@ -105,7 +105,7 @@ class messegecontroller:
 
     @staticmethod
     def getlist(self):
-        obj = messegeiten.messegemodels()
+        obj = messegemodels()
         return obj.getlist()
 
     pass
