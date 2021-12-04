@@ -1,0 +1,331 @@
+[
+    {
+        "userchatbot": 454646,
+        "fechecreate": "01-11-2021",
+        "itemmessege": [
+            {
+                "id": 1,
+                "input": "Que metodos se pueden utilizar para publicar",
+                "inputpalclab": {
+                    "idmessege": 1,
+                    "tipo": 1,
+                    "palabras": [
+                        "metodos",
+                        "publicar"
+                    ]
+                },
+                "ouputs": "Tenemos el metodo particular o profecional"
+            },
+            {
+                "id": 2,
+                "input": "default",
+                "inputpalclab": {
+                    "idmessege": 2,
+                    "tipo": 2,
+                    "palabras": [
+                        "publicar",
+                        "particular"
+                    ]
+                },
+                "ouputs": "Propietarios que desean vender o alquilar un inmueble. Mas informacion aqui : https://gojom.pe/p/publica-tu-inmueble-particular"
+            },
+            {
+                "id": 3,
+                "input": "default",
+                "inputpalclab": {
+                    "idmessege": 3,
+                    "tipo": 2,
+                    "palabras": [
+                        "publicar",
+                        "profecional"
+                    ]
+                },
+                "ouputs": "Inmobiliarias, corredores, agentes. Mas informacion aqui : https://gojom.pe/p/publica-tu-inmueble-profesional"
+            },
+            {
+                "id": 4,
+                "input": "default",
+                "inputpalclab": {
+                    "idmessege": 4,
+                    "tipo": 3,
+                    "palabras": [
+                        "problema",
+                        "duda",
+                        "consula"
+                    ]
+                },
+                "ouputs": "Rellena el siguiente formulario"
+            },
+            {
+                "id": 5,
+                "input": "default",
+                "inputpalclab": {
+                    "idmessege": 5,
+                    "tipo": 3,
+                    "palabras": [
+                        "mas favoritos",
+                        "mas comprados"
+                    ]
+                },
+                "ouputs": "Rellena el siguiente formulario"
+            },
+            {
+                "id": 6,
+                "input": "default",
+                "inputpalclab": {
+                    "idmessege": 6,
+                    "tipo": 3,
+                    "palabras": [
+                        "mas recomendado",
+                        "recomiendas",
+                        "recomendarme",
+                        "recomendarme"
+                    ]
+                },
+                "ouputs": "Te recomiento estos inmuebles"
+            },
+            {
+                "id": 7,
+                "input": "default",
+                "inputpalclab": {
+                    "idmessege": 7,
+                    "tipo": 3,
+                    "palabras": [
+                        "comprar",
+                        "comprando"
+                    ]
+                },
+                "ouputs": "Tenemos algunos de estos inmuebles de compra"
+            },
+            {
+                "id": 8,
+                "input": "default",
+                "inputpalclab": {
+                    "idmessege": 8,
+                    "tipo": 1,
+                    "palabras": [
+                        "Cual",
+                        "libro favorito"
+                    ]
+                },
+                "ouputs": "No puedo lee"
+            },
+            {
+                "id": 9,
+                "input": "default",
+                "inputpalclab": {
+                    "idmessege": 9,
+                    "tipo": 3,
+                    "palabras": [
+                        "alquiler",
+                        "alquilar",
+                        "alquileres"
+                    ]
+                },
+                "ouputs": "Tenemos algunos de estos inmuebles de alquiler"
+            },
+            {
+                "id": 10,
+                "input": "default",
+                "inputpalclab": {
+                    "idmessege": 10,
+                    "tipo": 3,
+                    "palabras": [
+                        "hola",
+                        "hey",
+                        "buenas"
+                    ]
+                },
+                "ouputs": "Hola. \u00c2\u00bfCu\u00c3\u00a1l es tu pregunta?"
+            },
+            {
+                "id": 11,
+                "input": "default",
+                "inputpalclab": {
+                    "idmessege": 11,
+                    "tipo": 2,
+                    "palabras": [
+                        "publicar",
+                        "inmueble"
+                    ]
+                },
+                "ouputs": "Publica tus anuncios totalmente gratis e indefinidamente en Casas360. Si tienes m\u00c3\u00a1s de 100 anuncios, podemos ayudarte a importarlos masivamente. Ingrese aqui: https://casas360.pe/p/publica-tu-inmueble"
+            },
+            {
+                "id": 12,
+                "input": "default",
+                "inputpalclab": {
+                    "idmessege": 12,
+                    "tipo": 3,
+                    "palabras": [
+                        "redes sociale",
+                        "redes"
+                    ]
+                },
+                "ouputs": "faceboo: https://www.facebook.com/GoJom.pe"
+            },
+            {
+                "id": 13,
+                "input": "default",
+                "inputpalclab": {
+                    "idmessege": 13,
+                    "tipo": 3,
+                    "palabras": [
+                        "pagina empresarial",
+                        "pagina"
+                    ]
+                },
+                "ouputs": "empresa: https://gojom.pe/"
+            },
+            {
+                "id": 14,
+                "input": "default",
+                "inputpalclab": {
+                    "idmessege": 14,
+                    "tipo": 3,
+                    "palabras": [
+                        "estas",
+                        "sientes",
+                        "que tal"
+                    ]
+                },
+                "ouputs": "No lo se soy un bot, y no entiendo los sentimientos"
+            },
+            {
+                "id": 15,
+                "input": "default",
+                "inputpalclab": {
+                    "idmessege": 15,
+                    "tipo": 2,
+                    "palabras": [
+                        "quien",
+                        "creado",
+                        "creo"
+                    ]
+                },
+                "ouputs": "No lo se soy un bot, y no entiendo los sentimientos"
+            },
+            {
+                "id": 16,
+                "input": "default",
+                "inputpalclab": {
+                    "idmessege": 16,
+                    "tipo": 3,
+                    "palabras": [
+                        "finalizar",
+                        "adios"
+                    ]
+                },
+                "ouputs": "Fue bueno hablar contigo"
+            },
+            {
+                "id": 17,
+                "input": "default",
+                "inputpalclab": {
+                    "idmessege": 17,
+                    "tipo": 2,
+                    "palabras": [
+                        "finalizar",
+                        "adios"
+                    ]
+                },
+                "ouputs": "Fue bueno hablar contigo"
+            }
+        ]
+    },
+    {
+        "userchatbot": "573eeffa-52f3-40c6-99cd-274d812cd42e",
+        "fechecreate": "2021-12-03",
+        "itemmessege": [
+            {
+                "id": 3,
+                "input": "Quiero una rica y sabrosa pinga que sea muy venosa",
+                "inputpalclab": {
+                    "idmessege": 3,
+                    "tipo": 1,
+                    "palabras": [
+                        "pinga",
+                        "venosa"
+                    ]
+                },
+                "ouputs": "Si te gusta aqui tengo una entre las piernas"
+            },
+            {
+                "id": 1,
+                "input": "Quiero una rica y sabrosa pinga que sea muy venosa",
+                "inputpalclab": {
+                    "idmessege": 3,
+                    "tipo": 1,
+                    "palabras": [
+                        "pinga",
+                        "venosa"
+                    ]
+                },
+                "ouputs": "Si te gusta aqui tengo una entre las piernas"
+            },
+            {
+                "id": 3,
+                "input": "Quiero una rica y sabrosa pinga que sea muy venosa",
+                "inputpalclab": {
+                    "idmessege": 3,
+                    "tipo": 1,
+                    "palabras": [
+                        "pinga",
+                        "venosa"
+                    ]
+                },
+                "ouputs": "Si te gusta aqui tengo una entre las piernas"
+            }
+        ]
+    },
+    {
+        "userchatbot": "1404764a-b100-436a-a069-540655f15295",
+        "fechecreate": "2021-12-03",
+        "itemmessege": []
+    },
+    {
+        "userchatbot": "73290d7a-445d-442e-8038-cc2cfe3b2510",
+        "fechecreate": "2021-12-03",
+        "itemmessege": [
+            {
+                "id": 3,
+                "input": "Quiero una rica y sabrosa pinga que sea muy venosa",
+                "inputpalclab": {
+                    "idmessege": 3,
+                    "tipo": 1,
+                    "palabras": [
+                        "pinga",
+                        "venosa"
+                    ]
+                },
+                "ouputs": "Si te gusta aqui tengo una entre las piernas"
+            },
+            {
+                "id": 1,
+                "input": "Quiero una rica y sabrosa pinga que sea muy venosa",
+                "inputpalclab": {
+                    "idmessege": 3,
+                    "tipo": 1,
+                    "palabras": [
+                        "pinga",
+                        "venosa"
+                    ]
+                },
+                "ouputs": "Si te gusta aqui tengo una entre las piernas"
+            },
+            {
+                "id": 3,
+                "input": "Quiero una rica y sabrosa pinga que sea muy venosa",
+                "inputpalclab": {
+                    "idmessege": 3,
+                    "tipo": 1,
+                    "palabras": [
+                        "pinga",
+                        "venosa"
+                    ]
+                },
+                "ouputs": "Si te gusta aqui tengo una entre las piernas"
+            }
+        ]
+    }
+]

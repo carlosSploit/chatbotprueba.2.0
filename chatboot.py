@@ -3,12 +3,12 @@ from nltk.chat.util import Chat, reflections
 import webscraaping as wb
 import json
 import copy
-from controllers.messegecontroller import messegecontroller
+from controllers.usuariocontroller import classusuaruarioscontroller
 
 # datos para el entrenamiento del chatbot
 mis_reflexions = {}
 pares = []
-#obj = messegecontroller({})
+objuser = classusuaruarioscontroller({})
 
 
 def initdatares():
@@ -22,220 +22,8 @@ def initdatares():
         "caido": "cayo",
         "cayo": "caido"
     }
-
-    # tipo stade palabras clabe
-    # 1 -> secuencia  -> metodos - publicar
-    # 2 -> conbinaciones -> metodos - pubicar / publicar - metodo
-    # 3 -> no-dependientes -> metodos / publicar
-    # donde:
-    # - : contenido entre palabras
-    # / : otra frace
-    # nota:
-    # Considerar que en cada palabra, abra una palabra antes y una palabra despues
-    # de la palabra bace
-    # #
-    # datos de aprendisaje predefinico
-    # misaprendis = {
-    #     "id": 45464,
-    #     "input": "Que metodos se pueden utilizar para publicar",
-    #     "inputpalclab": {
-    #         "tipo": 1,
-    #         "palabras": [
-    #             "metodos", "publicar"
-    #         ]
-    #     },
-    #     "ouputs": "Tenemos el metodo particular o profecional"
-    # }
-
-    pares = [
-        messegecontroller({
-            "id": 45464,
-            "input": "Que metodos se pueden utilizar para publicar",
-            "inputpalclab": {
-                "tipo": 1,
-                "palabras": [
-                    "metodos", "publicar"
-                ]
-            },
-            "ouputs": "Tenemos el metodo particular o profecional"
-        }),
-        messegecontroller({
-            "id": 45464,
-            "input": "default",
-            "inputpalclab": {
-                "tipo": 2,
-                "palabras": [
-                    "publicar", "particular"
-                ]
-            },
-            "ouputs": "Propietarios que desean vender o alquilar un inmueble. Mas informacion aqui : https://gojom.pe/p/publica-tu-inmueble-particular"
-        }),
-        messegecontroller({
-            "id": 45464,
-            "input": "default",
-            "inputpalclab": {
-                "tipo": 2,
-                "palabras": [
-                    "publicar", "profecional"
-                ]
-            },
-            "ouputs": "Inmobiliarias, corredores, agentes. Mas informacion aqui : https://gojom.pe/p/publica-tu-inmueble-profesional"
-        }),
-        messegecontroller({
-            "id": 45464,
-            "input": "default",
-            "inputpalclab": {
-                "tipo": 3,
-                "palabras": [
-                    "problema", "duda", "consula"
-                ]
-            },
-            "ouputs": "Rellena el siguiente formulario"
-        }),
-        messegecontroller({
-            "id": 45464,
-            "input": "default",
-            "inputpalclab": {
-                "tipo": 3,
-                "palabras": [
-                    "mas favoritos", "mas comprados",
-                ]
-            },
-            "ouputs": "Rellena el siguiente formulario"
-        }),
-        messegecontroller({
-            "id": 45464,
-            "input": "default",
-            "inputpalclab": {
-                "tipo": 3,
-                "palabras": [
-                    "mas recomendado", "recomiendas", "recomendarme", "recomendarme"
-                ]
-            },
-            "ouputs": "Te recomiento estos inmuebles"
-        }),
-        messegecontroller({
-            "id": 45464,
-            "input": "default",
-            "inputpalclab": {
-                "tipo": 3,
-                "palabras": [
-                    "comprar", "comprando"
-                ]
-            },
-            "ouputs": "Tenemos algunos de estos inmuebles de compra"
-        }),
-        messegecontroller({
-            "id": 45464,
-            "input": "default",
-            "inputpalclab": {
-                "tipo": 1,
-                "palabras": [
-                    "Cual", "libro favorito"
-                ]
-            },
-            "ouputs": "No puedo lee"
-        }),
-        messegecontroller({
-            "id": 45464,
-            "input": "default",
-            "inputpalclab": {
-                "tipo": 3,
-                "palabras": [
-                    "alquiler", "alquilar", "alquileres"
-                ]
-            },
-            "ouputs": "Tenemos algunos de estos inmuebles de alquiler"
-        }),
-        messegecontroller({
-            "id": 45464,
-            "input": "default",
-            "inputpalclab": {
-                "tipo": 3,
-                "palabras": [
-                    "hola", "hey", "buenas"
-                ]
-            },
-            "ouputs": "Hola. ¿Cuál es tu pregunta?"
-        }),
-        messegecontroller({
-            "id": 45464,
-            "input": "default",
-            "inputpalclab": {
-                "tipo": 2,
-                "palabras": [
-                    "publicar", "inmueble"
-                ]
-            },
-            "ouputs": "Publica tus anuncios totalmente gratis e indefinidamente en Casas360. Si tienes más de 100 anuncios, podemos ayudarte a importarlos masivamente. Ingrese aqui: https://casas360.pe/p/publica-tu-inmueble"
-        }),
-        messegecontroller({
-            "id": 45464,
-            "input": "default",
-            "inputpalclab": {
-                "tipo": 3,
-                "palabras": [
-                    "redes sociale", "redes"
-                ]
-            },
-            "ouputs": "faceboo: https://www.facebook.com/GoJom.pe"
-        }),
-        messegecontroller({
-            "id": 45464,
-            "input": "default",
-            "inputpalclab": {
-                "tipo": 3,
-                "palabras": [
-                    "pagina empresarial", "pagina"
-                ]
-            },
-            "ouputs": "empresa: https://gojom.pe/"
-        }),
-        messegecontroller({
-            "id": 45464,
-            "input": "default",
-            "inputpalclab": {
-                "tipo": 3,
-                "palabras": [
-                    "estas", "sientes", "que tal"
-                ]
-            },
-            "ouputs": "No lo se soy un bot, y no entiendo los sentimientos"
-        }),
-        messegecontroller({
-            "id": 45464,
-            "input": "default",
-            "inputpalclab": {
-                "tipo": 2,
-                "palabras": [
-                    "quien", "creado", "creo"
-                ]
-            },
-            "ouputs": "No lo se soy un bot, y no entiendo los sentimientos"
-        }),
-        messegecontroller({
-            "id": 45464,
-            "input": "default",
-            "inputpalclab": {
-                "tipo": 3,
-                "palabras": [
-                    "finalizar", "adios"
-                ]
-            },
-            "ouputs": "Fue bueno hablar contigo"
-        }),
-        messegecontroller({
-            "id": 45464,
-            "input": "default",
-            "inputpalclab": {
-                "tipo": 2,
-                "palabras": [
-                    "finalizar", "adios"
-                ]
-            },
-            "ouputs": "Fue bueno hablar contigo"
-        }),
-    ]
+    objuseAux = objuser.getread(454646)
+    pares = objuseAux.getitemmessege()
 
 # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 # 1 -> secuencia  -> metodos - publicar
@@ -307,6 +95,8 @@ def inver_array(list_iten):
     return lista_Aux
 
 # generar combinaciones de palabras y parciarlos: (.*) casa (.*) papa (.*) | (.*) casa (.*) papa (.*)
+# messege : mensaje ingresado
+# list_pal : lista de palabras clabe
 
 
 def parse_conbinaciones(nessege, list_pal):
@@ -324,6 +114,8 @@ def parse_conbinaciones(nessege, list_pal):
 # 3 -> no-dependientes -> metodos / publicar
 
 # compara una lista de palabras con otra y compara si existe
+# messege : mensaje ingresado
+# list_pal : lista de palabras clabe
 
 
 def parse_no_dependientes(messege, list_pal):
@@ -465,4 +257,4 @@ initdatares()
 # print(parse_secuencia("que metodo puedo usar para publicar un inmueble",
 #       pares[0]["inputpalclab"]["palabras"], 0, 0, 0))
 # chatbot 2.0
-print(converce("hola que tal"))
+print(converce("me gustaria una pinga que sea bien venosa para el almuerzo"))

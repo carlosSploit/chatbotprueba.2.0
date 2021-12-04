@@ -1,53 +1,7 @@
-from models.messegeiten import messegemodels
-
-# tipo stade palabras clabe
-# 1 -> secuencia  -> metodos - publicar
-# 2 -> conbinaciones -> metodos - pubicar / publicar - metodo
-# 3 -> no-dependientes -> metodos / publicar
-# donde:
-# - : contenido entre palabras
-# / : otra frace
-# nota:
-# Considerar que en cada palabra, abra una palabra antes y una palabra despues
-# de la palabra bace
-# #
-
-#     "inputpalclab": {
-#         "tipo": 1,
-#         "palabras": [
-#             "metodos", "publicar"
-#         ]
-#     },
+from controllers.palabraclabcontroller import classpalabraclabcontroller
 
 
-class palabraclabcontroller:
-    id = 4564
-    tipo = 1
-    palabras = []
-
-    # costructor de mensajes
-    def __init__(self, json):
-        # Si existe la variable, inicializa la de la clase
-        if("id" in json):
-            self.id = json["id"]
-        if("tipo" in json):
-            self.tipo = json["tipo"]
-        if("palabras" in json):
-            self.palabras = json["palabras"]
-
-    # getterts
-
-    def getid(self):
-        return self.id
-
-    def gettipo(self):
-        return self.tipo
-
-    def getpalabra(self):
-        return self.palabras
-
-    pass
-
+# @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 # datos de aprendisaje predefinico
 # misaprendis = {
 #     "id": 45464,
@@ -62,11 +16,11 @@ class palabraclabcontroller:
 # }
 
 
-class messegecontroller:
+class classmessegecontroller:
     id = 4564
     imput = "Que metodos se pueden utilizar para publicar"
     ouputs = "Tenemos el metodo particular o profecional"
-    inputpalclab = palabraclabcontroller({})
+    inputpalclab = classpalabraclabcontroller({})
 
     # costructor de mensajes
     def __init__(self, json):
@@ -78,7 +32,8 @@ class messegecontroller:
         if("ouputs" in json):
             self.ouputs = json["ouputs"]
         if("inputpalclab" in json):
-            self.inputpalclab = palabraclabcontroller(json["inputpalclab"])
+            self.inputpalclab = classpalabraclabcontroller(
+                json["inputpalclab"])
 
     # getterts
 
@@ -103,24 +58,27 @@ class messegecontroller:
         }
     # listar datos
 
-    @staticmethod
-    def getlist(self):
-        obj = messegemodels()
-        return obj.getlist()
+    # def getlist(self):
+    #     #obj = messegemodels()
+    #     lis_messge_controller = []
+    #     for a in range(len(messegetuplas)):
+    #         lis_messge_controller.append(
+    #             classmessegecontroller(messegetuplas[a]))
+    #     return lis_messge_controller
 
     pass
 
 
-obj = messegecontroller({
-    "id": 45464,
-    "input": "Que metodos se pueden utilizar para publicar",
-    "inputpalclab": {
-        "tipo": 1,
-        "palabras": [
-            "metodos", "publicar"
-        ]
-    },
-    "ouputs": "Tenemos el metodo particular o profecional"
-})
+# obj = classmessegecontroller({
+#     "id": 45464,
+#     "input": "Que metodos se pueden utilizar para publicar",
+#     "inputpalclab": {
+#         "tipo": 1,
+#         "palabras": [
+#             "metodos", "publicar"
+#         ]
+#     },
+#     "ouputs": "Tenemos el metodo particular o profecional"
+# })
 
-print(obj.getlist())
+# print(len(obj.getlist()))
