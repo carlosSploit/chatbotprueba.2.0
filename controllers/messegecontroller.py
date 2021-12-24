@@ -1,5 +1,5 @@
 from controllers.palabraclabcontroller import classpalabraclabcontroller
-
+from models.messegemodels import classmessegemodels
 
 # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 # datos de aprendisaje predefinico
@@ -21,6 +21,7 @@ class classmessegecontroller:
     imput = "Que metodos se pueden utilizar para publicar"
     ouputs = "Tenemos el metodo particular o profecional"
     inputpalclab = classpalabraclabcontroller({})
+    models = classmessegemodels({})
 
     # costructor de mensajes
     def __init__(self, json):
@@ -56,15 +57,34 @@ class classmessegecontroller:
             "inputpalclab": self.getinputpalclab(),
             "ouputs": self.getouputs()
         }
-    # listar datos
 
-    # def getlist(self):
-    #     #obj = messegemodels()
-    #     lis_messge_controller = []
-    #     for a in range(len(messegetuplas)):
-    #         lis_messge_controller.append(
-    #             classmessegecontroller(messegetuplas[a]))
-    #     return lis_messge_controller
+    def getlist(self, code):
+        return self.models.getlist(code)
+
+    # insercion de un mensaje
+    # teniendo en cuenta la lista de mensajes anterior
+
+    def insert(self, code, jsonprar):
+        self.models.insert(code, jsonprar)
+
+    # actualizacion de un mensaje
+    # teniendo en cuenta la lista de mensajes anterior
+
+    def update(self, code, jsonprar):
+        self.models.update(code, jsonprar)
+        # se elimina el emnsaje pasando el code del chatbot y de codemeess de los mensajes
+
+    def delect(self, code, codemess):
+        self.models.delect(code, codemess)
+        # listar datos
+
+        # def getlist(self):
+        #     #obj = messegemodels()
+        #     lis_messge_controller = []
+        #     for a in range(len(messegetuplas)):
+        #         lis_messge_controller.append(
+        #             classmessegecontroller(messegetuplas[a]))
+        #     return lis_messge_controller
 
     pass
 

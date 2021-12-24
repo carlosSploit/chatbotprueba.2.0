@@ -9,12 +9,13 @@ from controllers.usuariocontroller import classusuaruarioscontroller
 mis_reflexions = {}
 pares = []
 objuser = classusuaruarioscontroller({})
+codechatbot = ""
 
 
-def initdatares():
-
+def initdatares(code):
     global mis_reflexions
     global pares
+    global codechatbot
 
     mis_reflexions = {
         "ir": "fui",
@@ -22,8 +23,9 @@ def initdatares():
         "caido": "cayo",
         "cayo": "caido"
     }
-    objuseAux = objuser.getread(454646)
+    objuseAux = classusuaruarioscontroller(objuser.read(code))
     pares = objuseAux.getitemmessege()
+    codechatbot = code
 
 # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 # 1 -> secuencia  -> metodos - publicar
@@ -196,6 +198,64 @@ def converce(messege):
 # metodo para sacer un resultado del chatbot
 
 
+def conversacionbot(messeg):
+    respont = converce(messeg)
+    # chat.converse()
+    # Ingresar los datos para que de una respuesta el bot segun lo aprendido
+    meseg = str(respont)
+    resul = {}  # captara el mensaje eun forma de json
+    rejson = ''  # captara el mensaje en forma de string o cadena
+    # solo sucerera el filtro si cmple con el code principal
+    print("code cache: {} ".format(
+        "78863582-c921-4552-8cd0-7f6afac0ac47"), "code inser: {} ".format(codechatbot))
+    if ("78863582-c921-4552-8cd0-7f6afac0ac47" == codechatbot):
+        if ((meseg == 'None') or (meseg == '') or (meseg == None)):
+
+            resul['messeg'] = 'none'
+
+        elif (meseg == 'Tenemos algunos de estos inmuebles de alquiler'):
+
+            rejson = wb.inmuebleALQUILER(messeg)
+            resul = json.loads(rejson)
+
+            if (resul['messeg'] == 'none'):
+                resul['messeg'] = 'Tenemos algunos de estos inmuebles'
+
+        elif (meseg == 'Tenemos algunos de estos inmuebles de compra'):
+
+            rejson = wb.inmuebleCOMPRA(messeg)
+            resul = json.loads(rejson)
+
+            if (resul['messeg'] == 'none'):
+                resul['messeg'] = 'Tenemos algunos de estos inmuebles'
+
+        elif (meseg == 'Te recomiendo estos inmuebles'):
+
+            rejson = wb.inmuebleREC_FAV("R")
+            resul = json.loads(rejson)
+            resul['messeg'] = 'Te recomiendo estos inmuebles'
+
+        elif (meseg == 'Los mas comprados son estos inmuebles'):
+
+            rejson = wb.inmuebleREC_FAV("F")
+            resul = json.loads(rejson)
+            resul['messeg'] = 'Los mas comprados son estos inmuebles'
+
+        elif (meseg.rfind('https://www.facebook.com/') > -1):
+
+            resul = json.loads(wb.getposfacebookinterprice(meseg))
+
+        elif (meseg.rfind('https://gojom.pe/') > -1):
+
+            resul = json.loads(wb.getposwebinterprice(meseg))
+
+        else:
+            resul['messeg'] = meseg
+    else:
+        resul['messeg'] = meseg
+
+    return json.dumps(resul)
+
 # def conversacionbot(messeg):
     # chat = Chat(conveter_list(pares), mis_reflexions)
     # # chat.converse()
@@ -251,10 +311,11 @@ def converce(messege):
     # return json.dumps(resul)
 
 
-initdatares()
-#print(conversacionbot("hola, que tal como estas"))
-#print(conversacionbot("quiero alquilar un inmueble"))
-# print(parse_secuencia("que metodo puedo usar para publicar un inmueble",
-#       pares[0]["inputpalclab"]["palabras"], 0, 0, 0))
-# chatbot 2.0
-print(converce("me gustaria una pinga que sea bien venosa para el almuerzo"))
+# initdatares(454646)
+# print(conversacionbot("hola , quiero tu ayuda"))
+# #print(conversacionbot("quiero alquilar un inmueble"))
+# # print(parse_secuencia("que metodo puedo usar para publicar un inmueble",
+# #       pares[0]["inputpalclab"]["palabras"], 0, 0, 0))
+# ##########################################################################
+# # chatbot 2.0
+# print(conversacionbot("quiero alquilar un inmueble"))

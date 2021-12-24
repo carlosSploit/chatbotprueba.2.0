@@ -1,0 +1,11 @@
+### list
+GET http://192.168.0.7:443/app/user HTTP/1.1
+
+### read
+GET https://192.168.0.7:443/app/user/73290d7a-445d-442e-8038-cc2cfe3b2510 HTTP/1.1
+
+### create
+GET https://192.168.0.7:443/app/user/create HTTP/1.1
+
+### delect
+DELETE https://192.168.0.7:443/app/user/33defdfa-dd79-44a5-b9fc-ec8abafbef8f HTTP/1.1

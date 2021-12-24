@@ -1,0 +1,44 @@
+### list
+GET https://192.168.0.7:443/app/mess/list/73290d7a-445d-442e-8038-cc2cfe3b2510 HTTP/1.1
+
+### insert
+POST  https://192.168.0.7:443/app/mess/73290d7a-445d-442e-8038-cc2cfe3b2510 HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": 3,
+    "input": "quiero comprar mi almuerso bien perron",
+    "inputpalclab": {
+        "idmessege": 3,
+        "tipo": 1,
+        "palabras": [
+            "comprar",
+            "almuerso"
+        ]
+    },
+    "ouputs": "compra tu puto almuerzo pes perrin"
+}
+
+### update
+### tener en cuenta que la id, se tomara siempre en cuenta
+PUT  https://192.168.0.7:443/app/mess/73290d7a-445d-442e-8038-cc2cfe3b2510 HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": 4,
+    "input": "quiero comprar mi almuerso para mi familia",
+    "inputpalclab": {
+        "idmessege": 4,
+        "tipo": 1,
+        "palabras": [
+            "comprar",
+            "almuerso"
+        ]
+    },
+    "ouputs": "compra tu puto almuerzo pes perrin"
+}
+
+### delect
+### se eliminara con el codigo de usuario, como tambien con el codigo del mensaje
+DELETE https://192.168.0.7:443/app/mess/73290d7a-445d-442e-8038-cc2cfe3b2510/3 HTTP/1.1
+

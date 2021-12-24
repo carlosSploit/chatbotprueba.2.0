@@ -40,7 +40,7 @@ def init():
         ]
     )
     trainer = ListTrainer(chat)
-    if (checkFileExistance("./dataset.json")):
+    if (checkFileExistance("data/dataset.json")):
         print("Ya no podemos entrenarlo")
     else:
         trainer_M()

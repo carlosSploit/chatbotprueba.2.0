@@ -3,27 +3,20 @@
 
 # librerias para la creacion de la api
 from flask import Flask
-from flask import request
-from flask import render_template
-import chatboot as ctt
-import json
-import gmaiApi as gm
+# imports routers -------------------------------
+from routers.chatbotrouters import chatbotrouters
+from routers.viewsrouters import viewrouters
+from routers.apigmailrouters import apirestgmail
+from routers.usuariosrouters import usuariosapirouters
+from routers.messegerouters import messegeapirouters
+#################################################
 import chatbotaprend as ca
 import ssl
 # *********************************Api***************************************
 
 # inicialisando la plataforma de flast
 app = Flask(__name__, template_folder='plantillas')
-# app.config.from_object(DevelopmentConfig)
-#mail = Mail()
-#mail.port = 587
-#mail.username = 'arturo14212000@gmail.com'
-#mail.password = '@123456789987654321'
-#mail.use_ssl = False
-#mail.use_tls = True
-#mail.server = 'smtp.gmail.com'
 ca.init()
-ctt.initdatares()
 
 #server_name = app.config['SERVER_NAME']
 
@@ -33,36 +26,13 @@ def messeg():
     return "la aplicacion esta funcionando muy bien"
 
 
-@app.route('/app/chatbot/<emi>', methods=["GET", "POST"])
-def messegchatbot(emi):
-    # ctt.conversacionbot(emi)
-    # conversacionBOT(emi)
-    resul = ''
-    y = json.loads(ctt.conversacionbot(emi))
-    if (y['messeg'] == 'none'):
-        y['messeg'] = str(ca.converc(emi))
-        resul = json.dumps(y)
-    else:
-        resul = json.dumps(y)
-    return resul
-
-
-@app.route('/app/', methods=["GET", "POST"])
-def prueba():
-    return json.dumps({"mensaje": request.args.get('mesg'), "meseje2": request.args.get('mesg2')})
-
-
-@app.route('/app/correo', methods=["GET"])
-def enviarmesseg():
-    gm.Mandandomesseg(request.args.get('messeg'),
-                      request.args.get('nombre'), request.args.get('numero'), request.args.get('correo'))
-    return json.dumps({"mensaje": "la peticion fue enviada con exito"})
-
-
-@app.route('/app/avatar', methods=["GET"])
-def renderavatar():
-    return render_template('botsape.html')
-
+# routeres --------------------------------------------
+#app.register_blueprint(chatbotrouters, url_prefix='/accounts')
+app.register_blueprint(messegeapirouters)
+app.register_blueprint(usuariosapirouters)
+app.register_blueprint(chatbotrouters)
+app.register_blueprint(viewrouters)
+app.register_blueprint(apirestgmail)
 
 if __name__ == '__main__':
     # mail.init_app(app)
@@ -74,5 +44,6 @@ if __name__ == '__main__':
     context.load_cert_chain('server.cer', 'server.key')
     port = 443
     host = "192.168.0.7"
-    app.run(host=host, port=port, ssl_context=context)
+    # app.run(host=host, port=port, ssl_context=context)
+    app.run(host=host, port=port)
     app.run()
